@@ -30,14 +30,6 @@ dsj_lines = []
 gat_lines = [] #港澳台
 gj_lines = [] #国际台
 jlp_lines = [] #记录片
-dhp_lines = [] #动画片
-xq_lines = [] #戏曲
-js_lines = [] #解说
-cw_lines = [] #春晚
-mx_lines = [] #明星
-ztp_lines = [] #主题片
-zy_lines = [] #综艺频道
-
 # favorite_lines = []
 
 other_lines = []
@@ -105,20 +97,6 @@ def process_url(url):
                         gj_lines.append(process_name_string(line.strip()))
                     elif channel_name in jlp_dictionary:  #纪录片
                         jlp_lines.append(process_name_string(line.strip()))
-                    elif channel_name in dhp_dictionary:  #动画片
-                        dhp_lines.append(process_name_string(line.strip()))
-                    elif channel_name in xq_dictionary:  #戏曲
-                        xq_lines.append(process_name_string(line.strip()))
-                    elif channel_name in js_dictionary:  #解说
-                        js_lines.append(process_name_string(line.strip()))
-                    elif channel_name in cw_dictionary:  #春晚
-                        cw_lines.append(process_name_string(line.strip()))
-                    elif channel_name in mx_dictionary:  #明星
-                        mx_lines.append(process_name_string(line.strip()))
-                    elif channel_name in ztp_dictionary:  #主题片
-                        ztp_lines.append(process_name_string(line.strip()))
-                    elif channel_name in zy_dictionary:  #综艺频道
-                        zy_lines.append(process_name_string(line.strip()))
                     else:
                         other_lines.append(line.strip())
 
@@ -149,13 +127,6 @@ sh_dictionary=read_txt_to_array('shanghai.txt')
 gat_dictionary=read_txt_to_array('港澳台.txt')
 gj_dictionary=read_txt_to_array('国际台.txt')
 jlp_dictionary=read_txt_to_array('纪录片.txt')
-dhp_dictionary=read_txt_to_array('动画片.txt')
-xq_dictionary=read_txt_to_array('戏曲频道.txt')
-js_dictionary=read_txt_to_array('解说频道.txt')
-cw_dictionary=read_txt_to_array('春晚.txt')
-mx_dictionary=read_txt_to_array('明星.txt')
-ztp_dictionary=read_txt_to_array('主题片.txt')
-zy_dictionary=read_txt_to_array('综艺频道.txt')
 
 # 循环处理每个URL
 for url in urls:
@@ -188,17 +159,10 @@ all_lines =  ["更新时间,#genre#"] +[version] + ['\n'] +\
              ["体育频道,#genre#"] + sorted(set(ty_lines)) + ['\n'] + \
              ["电影频道,#genre#"] + sorted(set(dy_lines)) + ['\n'] + \
              ["电视剧频道,#genre#"] + sorted(set(dsj_lines)) + ['\n'] + \
-             ["明星,#genre#"] + sorted(set(mx_lines)) + ['\n'] + \
-             ["主题片,#genre#"] + sorted(set(ztp_lines)) + ['\n'] + \
              ["港澳台,#genre#"] + sorted(set(gat_lines)) + ['\n'] + \
              ["国际台,#genre#"] + sorted(set(gj_lines)) + ['\n'] + \
              ["纪录片,#genre#"] + sorted(set(jlp_lines)) + ['\n'] + \
-             ["动画片,#genre#"] + sorted(set(dhp_lines)) + ['\n'] + \
-             ["戏曲频道,#genre#"] + sorted(set(xq_lines)) + ['\n'] + \
-             ["解说频道,#genre#"] + sorted(set(js_lines)) + ['\n'] + \
-             ["综艺频道,#genre#"] + sorted(set(zy_lines)) + ['\n'] + \
-             ["春晚,#genre#"] + sorted(set(cw_lines))
-
+             
 
 # 将合并后的文本写入文件
 output_file = "merged_output.txt"
