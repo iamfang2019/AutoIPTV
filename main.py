@@ -161,8 +161,8 @@ all_lines =  ["更新时间,#genre#"] +[version] + ['\n'] +\
              ["电视剧频道,#genre#"] + sorted(set(dsj_lines)) + ['\n'] + \
              ["港澳台,#genre#"] + sorted(set(gat_lines)) + ['\n'] + \
              ["国际台,#genre#"] + sorted(set(gj_lines)) + ['\n'] + \
-             ["纪录片,#genre#"] + sorted(set(jlp_lines)) + ['\n'] + \
-             
+             ["纪录片,#genre#"] + sorted(set(jlp_lines)) 
+           
 
 # 将合并后的文本写入文件
 output_file = "merged_output.txt"
